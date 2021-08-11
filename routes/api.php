@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\NotificationController;
 
 
 use App\Http\Controllers\User\AuthController;
+use App\Http\Controllers\User\ForgetController;
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
@@ -27,6 +28,9 @@ Route::post('/login',[AuthController::class, 'Login']);
 
  // Register Routes 
 Route::post('/register',[AuthController::class, 'Register']);
+
+ // Forget Password Routes 
+Route::post('/forgetpassword',[ForgetController::class, 'ForgetPassword']);
 
 
  /////////////// End User Login API Start ////////////////////////
