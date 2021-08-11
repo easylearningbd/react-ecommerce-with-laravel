@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\ResetController;
+use App\Http\Controllers\User\UserController;
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
@@ -35,6 +36,9 @@ Route::post('/forgetpassword',[ForgetController::class, 'ForgetPassword']);
 
  // Reset Password Routes 
 Route::post('/resetpassword',[ResetController::class, 'ResetPassword']);
+
+ // Current User Route 
+Route::get('/user',[UserController::class, 'User'])->middleware('auth:api');
 
 
  /////////////// End User Login API Start ////////////////////////
