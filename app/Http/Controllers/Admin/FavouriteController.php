@@ -28,6 +28,15 @@ class FavouriteController extends Controller
     } // End Mehtod 
 
 
+    public function FavouriteList(Request $request){
+
+        $email = $request->email;
+        $result = Favourites::where('email',$email)->get();
+        return $result;
+
+    }// End Mehtod 
+
+
 
 
 } 
