@@ -100,6 +100,8 @@ Route::get('/favourite/{product_code}/{email}',[FavouriteController::class, 'Add
 
 Route::get('/favouritelist/{email}',[FavouriteController::class, 'FavouriteList']);
 
+Route::get('/favouriteremove/{product_code}/{email}',[FavouriteController::class, 'FavouriteRemove']);
+
 
 
 
