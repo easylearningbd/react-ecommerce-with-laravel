@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductCart;
 use App\Models\ProductList;
+use App\Models\CartOrder;
 
 class ProductCartController extends Controller
 {
@@ -96,6 +97,12 @@ class ProductCartController extends Controller
 
          return $result;
 
+    }// End Method 
+
+
+
+    public function CartOrder(){
+        
     }// End Method 
 
 
