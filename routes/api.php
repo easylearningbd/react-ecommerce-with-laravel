@@ -85,8 +85,6 @@ Route::get('/search/{key}',[ProductListController::class, 'ProductBySearch']);
 // Similar Product Route
 Route::get('/similar/{subcategory}',[ProductListController::class, 'SimilarProduct']);
 
-// Review Product Route
-Route::get('/reviewlist/{id}',[ReviewController::class, 'ReviewList']);
 
 // Product Cart Route
 Route::post('/addtocart',[ProductCartController::class, 'addToCart']);
@@ -120,6 +118,8 @@ Route::get('/orderlistbyuser/{email}',[ProductCartController::class, 'OrderListB
 // Post Product Review Route
 Route::post('/postreview',[ReviewController::class, 'PostReview']);
 
+// Review Product Route
+Route::get('/reviewlist/{product_code}',[ReviewController::class, 'ReviewList']);
 
 
 

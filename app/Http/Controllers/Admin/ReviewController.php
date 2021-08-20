@@ -10,8 +10,8 @@ class ReviewController extends Controller
 {
     public function ReviewList(Request $request){
 
-        $id = $request->id;
-        $result = ProductReview::where('product_id',$id)->orderBy('id','desc')->limit(4)->get();
+        $product_code = $request->product_code;
+        $result = ProductReview::where('product_code',$product_code)->orderBy('id','desc')->limit(4)->get();
         return $result;
     } // End Method 
 
