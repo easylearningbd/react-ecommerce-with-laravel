@@ -46,8 +46,19 @@ class AdminController extends Controller
 
         return redirect()->route('user.profile')->with($notification);
 
-    }// end mehtod 
+    } // end mehtod 
 
+
+
+    public function ChangePassword(){
+        return view('backend.admin.change_password');
+    } // end mehtod 
+
+
+    public function ChangePasswordUpdate(Request $request){
+
+
+    } // end mehtod 
 
 
 }
