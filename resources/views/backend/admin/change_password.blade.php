@@ -41,6 +41,9 @@
 	 @csrf
 
 
+	 @foreach ($errors->all() as $error)
+	 	<p class="text-danger"> {{ $error }}  </p>
+	 @endforeach
 
 				<div class="card">
 					<div class="card-body">
@@ -62,7 +65,7 @@
 		<h6 class="mb-0">New Password </h6>
 	</div>
 	<div class="col-sm-9 text-secondary">
-		<input type="password" name="password" id="password" class="form-control" value=" ">
+		<input type="password" name="password" id="password" class="form-control" >
 	</div>
 </div>
  
@@ -72,7 +75,7 @@
 		<h6 class="mb-0">Confirm Password </h6>
 	</div>
 	<div class="col-sm-9 text-secondary">
-		<input type="password" name="password_confirmation" id="password_confirmation" class="form-control" value=" ">
+		<input type="password" name="password_confirmation" id="password_confirmation" class="form-control" >
 	</div>
 </div>
  
