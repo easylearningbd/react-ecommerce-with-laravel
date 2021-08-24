@@ -1,6 +1,9 @@
 @extends('admin.admin_master')
 @section('admin')
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 <div class="page-wrapper">
 			<div class="page-content">
 				<!--breadcrumb-->
@@ -69,6 +72,13 @@
 					</div>
 				</div>
 			</div>
+
+
+
+
+	 <form method="post" action="{{ route('user.profile.store') }}" enctype="multipart/form-data"> 
+				@csrf
+
 			<div class="col-lg-8">
 				<div class="card">
 					<div class="card-body">
@@ -77,7 +87,7 @@
 		<h6 class="mb-0">Full Name</h6>
 	</div>
 	<div class="col-sm-9 text-secondary">
-		<input type="text" class="form-control" value="{{ $adminData->name }}">
+		<input type="text" name="name" class="form-control" value="{{ $adminData->name }}">
 	</div>
 </div>
 <div class="row mb-3">
@@ -85,13 +95,20 @@
 		<h6 class="mb-0">Email</h6>
 	</div>
 	<div class="col-sm-9 text-secondary">
-		<input type="text" class="form-control" value="{{ $adminData->email }}">
+		<input type="text" name="email" class="form-control" value="{{ $adminData->email }}">
 	</div>
 </div>
  
 <div class="mb-3">
  <label for="formFile" class="form-label">Upload Profile Image</label>
-	 <input class="form-control" type="file" id="formFile">
+	 <input class="form-control" name="profile_photo_path" type="file" id="image">
+	 </div>
+
+
+	 <div class="mb-3">
+
+	 	<img id="showImage" src="{{ (!empty($adminData->profile_photo_path))?url('upload/admin_images/'.$adminData->profile_photo_path):url('upload/no_image.jpg')   }}" style="width:100px; height: 100px;" >
+ 
 	 </div>
 
 
@@ -100,22 +117,16 @@
 <div class="row">
 	<div class="col-sm-3"></div>
 	<div class="col-sm-9 text-secondary">
-		<input type="button" class="btn btn-primary px-4" value="Save Changes">
+		<input type="submit" class="btn btn-primary px-4" value="Save Changes">
 	</div>
 </div>
 					</div>
 				</div>
 
+
+</form>
 				 
-
-
-
-
-
-
-
-
-
+ 
 
 
 
@@ -129,7 +140,18 @@
 
 
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#image').change(function(e){
+			var reader = new FileReader();
+			reader.onload = function(e){
+				$('#showImage').attr('src',e.target.result);
+			}
+			reader.readAsDataURL(e.target.files['0']);
 
+		});
+	});	
+</script>
 
 
 

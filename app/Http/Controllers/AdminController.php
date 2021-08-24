@@ -24,6 +24,12 @@ class AdminController extends Controller
     } // end mehtod 
 
 
+    public function UserProfileStore(Request $request){
+
+
+    }// end mehtod 
+
+
 
 }
  
