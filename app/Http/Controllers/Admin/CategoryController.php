@@ -30,5 +30,14 @@ class CategoryController extends Controller
 
     } // End Mehtod 
 
+
+
+    public function GetAllCategory(){
+
+        $category = Category::latest()->get();
+        return view('backend.category.category_view',compact('category'));
+
+    } // End Mehtod 
+
     
 }
