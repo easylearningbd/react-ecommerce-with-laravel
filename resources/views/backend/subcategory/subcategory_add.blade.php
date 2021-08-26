@@ -42,7 +42,7 @@
 
 
 
-<form method="post" action="{{ route('category.store') }}" enctype="multipart/form-data"> 
+<form method="post" action="{{ route('subcategory.store') }}" > 
 	 @csrf
 
 
@@ -55,7 +55,7 @@
 	</div>
 	<div class="col-sm-9 text-secondary">
 
-		<select class="form-select mb-3" aria-label="Default select example">
+		<select name="category_name" class="form-select mb-3" aria-label="Default select example">
 		<option selected="">Open this select menu</option>
 		@foreach($category as $item)
 		<option value="{{ $item->category_name }}"> {{ $item->category_name }}</option>
@@ -73,8 +73,8 @@
 		<h6 class="mb-0">SubCategory Name </h6>
 	</div>
 	<div class="col-sm-9 text-secondary">
-		<input type="text" name="category_name" class="form-control" value=" ">
-		@error('category_name')
+		<input type="text" name="subcategory_name" class="form-control" value=" ">
+		@error('subcategory_name')
 		<span class="text-danger">{{ $message }}</span>
 		@enderror
 

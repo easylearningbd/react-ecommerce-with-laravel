@@ -159,7 +159,31 @@ class CategoryController extends Controller
     } //End Method 
 
 
+    public function StoreSubCategory(Request $request){
 
+
+        $request->validate([
+            'subcategory_name' => 'required',
+        ],[
+            'subcategory_name.required' => 'Input SubCategory Name'
+
+        ]);
+
+        
+
+        Subcategory::insert([
+            'category_name' => $request->category_name,
+            'subcategory_name' => $request->subcategory_name,
+        ]);
+
+        $notification = array(
+            'message' => 'SubCategory Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.subcategory')->with($notification);
+        
+    } //End Method 
 
 
 
