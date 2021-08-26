@@ -39,5 +39,16 @@ class CategoryController extends Controller
 
     } // End Mehtod 
 
+
+    public function AddCategory(){
+      return view('backend.category.category_add');
+    } // End Mehtod 
+
+
+    public function StoreCategory(Request $request){
+
+
+    }// End Mehtod 
+
     
 }
