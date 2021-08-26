@@ -89,5 +89,5 @@ Route::get('/edit/{id}',[SliderController::class, 'EditSlider'])->name('slider.e
 
 Route::post('/update',[SliderController::class, 'UpdateSlider'])->name('slider.update');
  
-Route::get('/delete/{id}',[CategoryController::class, 'DeleteSubCategory'])->name('subcategory.delete');
+Route::get('/delete/{id}',[SliderController::class, 'DeleteSlider'])->name('slider.delete');
 });
