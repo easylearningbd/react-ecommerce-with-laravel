@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController; 
 use App\Http\Controllers\Admin\CategoryController; 
+use App\Http\Controllers\Admin\SliderController; 
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +65,23 @@ Route::prefix('subcategory')->group(function(){
 Route::get('/all',[CategoryController::class, 'GetAllSubCategory'])->name('all.subcategory');
 
 Route::get('/add',[CategoryController::class, 'AddSubCategory'])->name('add.subcategory');
+
+Route::post('/store',[CategoryController::class, 'StoreSubCategory'])->name('subcategory.store');
+
+Route::get('/edit/{id}',[CategoryController::class, 'EditSubCategory'])->name('subcategory.edit');
+
+Route::post('/update',[CategoryController::class, 'UpdateSubCategory'])->name('subcategory.update');
+ 
+Route::get('/delete/{id}',[CategoryController::class, 'DeleteSubCategory'])->name('subcategory.delete');
+});
+
+
+
+Route::prefix('slider')->group(function(){
+
+Route::get('/all',[SliderController::class, 'GetAllSlider'])->name('all.slider');
+
+Route::get('/add',[SliderController::class, 'AddSlider'])->name('add.slider');
 
 Route::post('/store',[CategoryController::class, 'StoreSubCategory'])->name('subcategory.store');
 
