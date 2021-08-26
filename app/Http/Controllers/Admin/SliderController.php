@@ -55,5 +55,34 @@ class SliderController extends Controller
     }// End Mehtod 
 
 
+    public function EditSlider($id){
+        $slider = HomeSlider::findOrFail($id);
+        return view('backend.slider.slider_edit',compact('slider'));
+
+    } // End Mehtod 
+
+
+    public function UpdateSlider(Request $request){
+
+        $slider_id = $request->id;
+
+        $image = $request->file('slider_image');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(1024,379)->save('upload/slider/'.$name_gen);
+        $save_url = 'http://127.0.0.1:8000/upload/slider/'.$name_gen;
+
+        HomeSlider::findOrFail($slider_id)->update([          
+            'slider_image' => $save_url,
+        ]);
+
+        $notification = array(
+            'message' => 'Slider Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.slider')->with($notification);
+
+    } // End Mehtod 
+
 }
   
