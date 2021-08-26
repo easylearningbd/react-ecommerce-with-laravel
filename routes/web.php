@@ -53,3 +53,20 @@ Route::post('/update',[CategoryController::class, 'UpdateCategory'])->name('cate
  
 Route::get('/delete/{id}',[CategoryController::class, 'DeleteCategory'])->name('category.delete');
 });
+
+
+
+Route::prefix('subcategory')->group(function(){
+
+Route::get('/all',[CategoryController::class, 'GetAllSubCategory'])->name('all.subcategory');
+
+Route::get('/add',[CategoryController::class, 'AddSubCategory'])->name('add.subcategory');
+
+Route::post('/store',[CategoryController::class, 'StoreCategory'])->name('category.store');
+
+Route::get('/edit/{id}',[CategoryController::class, 'EditCategory'])->name('category.edit');
+
+Route::post('/update',[CategoryController::class, 'UpdateCategory'])->name('category.update');
+ 
+Route::get('/delete/{id}',[CategoryController::class, 'DeleteCategory'])->name('category.delete');
+});
