@@ -5,7 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\CategoryController; 
 use App\Http\Controllers\Admin\SliderController; 
 use App\Http\Controllers\Admin\ProductListController; 
-
+use App\Http\Controllers\Admin\ContactController; 
 
 
 /*
@@ -108,3 +108,6 @@ Route::post('/update',[SliderController::class, 'UpdateSlider'])->name('slider.u
  
 Route::get('/delete/{id}',[SliderController::class, 'DeleteSlider'])->name('slider.delete');
 });
+
+/// Contact Message Route 
+Route::get('/all/message',[ContactController::class, 'GetAllMessage'])->name('contact.message');
