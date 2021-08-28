@@ -42,7 +42,7 @@
 				 
 				<td>
 	 
-	<a href="{{ route('category.delete',$item->id) }}" class="btn btn-danger" id="delete" >Delete </a>				
+	<a href="{{ route('message.delete',$item->id) }}" class="btn btn-danger" id="delete" >Delete </a>				
 					 
 				</td>
 			</tr>
