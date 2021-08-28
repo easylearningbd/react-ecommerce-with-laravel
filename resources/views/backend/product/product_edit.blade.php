@@ -83,18 +83,22 @@
 
 
 	 
-
+@foreach($details as $item)
   <div class="mb-3">
 	<label for="inputProductDescription" class="form-label">Short Description</label>
-	<textarea name="short_description" class="form-control" id="inputProductDescription" rows="3"></textarea>
+	<textarea name="short_description" class="form-control" id="inputProductDescription" rows="3">
+		{{ $item->short_description }}
+	</textarea>
   </div>
 
 
  <div class="mb-3">
 	<label for="inputProductDescription" class="form-label">Long Description</label>
-	<textarea id="mytextarea" name="long_description">Hello, World!</textarea>
+	<textarea id="mytextarea" name="long_description">
+		{{ $item->long_description }}
+	</textarea>
   </div>
- 
+ @endforeach
 		 
             </div>
 		   </div>
@@ -152,18 +156,19 @@
 		  </select>
 	  </div>
 
-
+	  @foreach($details as $item)
 	<div class="mb-3">
 	<label class="form-label">Product Size</label>
-	 <input type="text" name="size" class="form-control visually-hidden" data-role="tagsinput" value="S,M,L,XL">
+	 <input type="text" name="size" class="form-control visually-hidden" data-role="tagsinput" value="{{ $item->size }}">
 </div>
 
 
 	<div class="mb-3">
 	<label class="form-label">Product Color</label>
-	 <input type="text" name="color" class="form-control visually-hidden" data-role="tagsinput" value="Red,White,Black">
+	 <input type="text" name="color" class="form-control visually-hidden" data-role="tagsinput" value="{{ $item->color }}">
 </div>
 
+@endforeach
 
 <div class="form-check">
 	 <input class="form-check-input" name="remark" type="checkbox" value="FEATURED" id="flexCheckDefault1" {{ $product->remark == 'FEATURED' ? 'checked' : '' }} >
@@ -184,7 +189,7 @@
 
 	  <div class="col-12">
 		  <div class="d-grid">
-             <button type="submit" class="btn btn-primary">Save Product</button>
+             <button type="submit" class="btn btn-primary">Update Product</button>
 		  </div>
 	  </div>
   </div> 
