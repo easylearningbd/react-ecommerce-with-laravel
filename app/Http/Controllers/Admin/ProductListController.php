@@ -75,5 +75,37 @@ class ProductListController extends Controller
     } // End Method 
 
 
+    public function StoreProduct(Request $request){
+
+         $request->validate([
+            'product_code' => 'required',
+        ],[
+            'product_code.required' => 'Input Product Code'
+
+        ]);
+
+        $image = $request->file('image');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(711,960)->save('upload/product/'.$name_gen);
+        $save_url = 'http://127.0.0.1:8000/upload/product/'.$name_gen;
+
+        $product_id = ProductList::insertGetId([
+            'title' => $request->title,
+            'price' => $request->price,
+            'special_price' => $request->special_price,
+            'category' => $request->category,
+            'subcategory' => $request->subcategory,
+            'remark' => $request->remark,
+            'brand' => $request->brand,
+            'product_code' => $request->product_code,
+            'image' => $save_url, 
+
+        ]);
+
+        /////// Insert Into Product Details Table ////// 
+
+
+    } // End Method 
+
 
 }
