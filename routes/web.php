@@ -98,7 +98,7 @@ Route::prefix('product')->group(function(){
 
 Route::get('/all',[ProductListController::class, 'GetAllProduct'])->name('all.product');
 
-Route::get('/add',[SliderController::class, 'AddSlider'])->name('add.slider');
+Route::get('/add',[ProductListController::class, 'AddProduct'])->name('add.product');
 
 Route::post('/store',[SliderController::class, 'StoreSlider'])->name('slider.store');
 
