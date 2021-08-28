@@ -65,6 +65,9 @@
 
 
 
+				{{ $products->links('vendor.pagination.custom') }}	
+
+
 			</div>
 		</div>
  
