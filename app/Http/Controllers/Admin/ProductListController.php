@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProductList;
-
+ 
 class ProductListController extends Controller
 {
     public function ProductListByRemark(Request $request){
@@ -52,6 +52,15 @@ class ProductListController extends Controller
         return $productlist;
 
     }// End Method 
+
+
+
+    public function GetAllProduct(){
+
+        $products = ProductList::latest()->get();
+        return view('backend.product.product_all',compact('products'));
+
+    } // End Method 
 
 
 

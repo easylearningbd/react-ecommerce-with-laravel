@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController; 
 use App\Http\Controllers\Admin\CategoryController; 
 use App\Http\Controllers\Admin\SliderController; 
-
+use App\Http\Controllers\Admin\ProductListController; 
 
 
 
@@ -80,6 +80,23 @@ Route::get('/delete/{id}',[CategoryController::class, 'DeleteSubCategory'])->nam
 Route::prefix('slider')->group(function(){
 
 Route::get('/all',[SliderController::class, 'GetAllSlider'])->name('all.slider');
+
+Route::get('/add',[SliderController::class, 'AddSlider'])->name('add.slider');
+
+Route::post('/store',[SliderController::class, 'StoreSlider'])->name('slider.store');
+
+Route::get('/edit/{id}',[SliderController::class, 'EditSlider'])->name('slider.edit');
+
+Route::post('/update',[SliderController::class, 'UpdateSlider'])->name('slider.update');
+ 
+Route::get('/delete/{id}',[SliderController::class, 'DeleteSlider'])->name('slider.delete');
+});
+
+
+
+Route::prefix('product')->group(function(){
+
+Route::get('/all',[ProductListController::class, 'GetAllProduct'])->name('all.product');
 
 Route::get('/add',[SliderController::class, 'AddSlider'])->name('add.slider');
 
