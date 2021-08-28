@@ -102,7 +102,7 @@ Route::get('/add',[ProductListController::class, 'AddProduct'])->name('add.produ
 
 Route::post('/store',[ProductListController::class, 'StoreProduct'])->name('product.store');
 
-Route::get('/edit/{id}',[SliderController::class, 'EditSlider'])->name('slider.edit');
+Route::get('/edit/{id}',[ProductListController::class, 'EditProduct'])->name('product.edit');
 
 Route::post('/update',[SliderController::class, 'UpdateSlider'])->name('slider.update');
  
