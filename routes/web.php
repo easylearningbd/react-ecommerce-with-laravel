@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ProductListController; 
 use App\Http\Controllers\Admin\ContactController; 
 
+use App\Http\Controllers\Admin\ReviewController; 
+
 
 /*
 |--------------------------------------------------------------------------
@@ -113,3 +115,6 @@ Route::get('/delete/{id}',[SliderController::class, 'DeleteSlider'])->name('slid
 Route::get('/all/message',[ContactController::class, 'GetAllMessage'])->name('contact.message');
 
 Route::get('/message/delete/{id}',[ContactController::class, 'DeleteMessage'])->name('message.delete');
+
+/// Product Review Route 
+Route::get('/all/review',[ReviewController::class, 'GetAllReview'])->name('all.review');
