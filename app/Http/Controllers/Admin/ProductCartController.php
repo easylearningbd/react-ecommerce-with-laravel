@@ -191,16 +191,15 @@ class ProductCartController extends Controller
     } // End Method 
 
 
+    public function OrderDetails($id){
+
+        $order = CartOrder::findOrFail($id);
+        return view('backend.orders.order_details',compact('order'));
 
 
+    } // End Method 
 
-
-
-
-
-
-
-
+ 
 
 
 

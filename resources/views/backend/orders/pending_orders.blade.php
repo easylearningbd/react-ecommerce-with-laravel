@@ -45,7 +45,7 @@
 		 <td> <strong><span class="text-danger">{{ $item->order_status }}</span> </strong> </td>		 
 				 
 				<td>
-	<a href="{{ route('category.edit',$item->id) }}" class="btn btn-info" >Details </a>	
+	<a href="{{ route('order.details',$item->id) }}" class="btn btn-info" >Details </a>	
 	 			
 					 
 				</td>

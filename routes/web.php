@@ -135,5 +135,7 @@ Route::get('/processing',[ProductCartController::class, 'ProcessingOrder'])->nam
 
 Route::get('/complete',[ProductCartController::class, 'CompleteOrder'])->name('complete.order');
 
+Route::get('/details/{id}',[ProductCartController::class, 'OrderDetails'])->name('order.details');
+
  
 });
