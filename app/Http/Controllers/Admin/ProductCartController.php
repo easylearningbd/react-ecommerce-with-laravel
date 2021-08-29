@@ -164,5 +164,30 @@ class ProductCartController extends Controller
     }// End Method 
 
 
+    ///////////////// Order Process From Backend ////////////////
+
+
+    public function PendingOrder(){
+
+        $orders = CartOrder::where('order_status','Pending')->orderBy('id','DESC')->get();
+        return view('backend.orders.pending_orders',compact('orders'));
+
+    } // End Method 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
  

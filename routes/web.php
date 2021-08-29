@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ContactController;
 
 use App\Http\Controllers\Admin\ReviewController; 
 use App\Http\Controllers\Admin\SiteInfoController; 
+use App\Http\Controllers\Admin\ProductCartController; 
 
 
 /*
@@ -124,3 +125,11 @@ Route::get('/all/review',[ReviewController::class, 'GetAllReview'])->name('all.r
 Route::get('/getsite/info',[SiteInfoController::class, 'GetSiteInfo'])->name('getsite.info');
 
 Route::post('/update/siteinfo',[SiteInfoController::class, 'UpdateSiteInfo'])->name('update.siteinfo');
+
+
+Route::prefix('order')->group(function(){
+
+Route::get('/pending',[ProductCartController::class, 'PendingOrder'])->name('pending.order');
+
+ 
+});
