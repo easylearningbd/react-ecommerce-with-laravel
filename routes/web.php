@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\Admin\ContactController; 
 
 use App\Http\Controllers\Admin\ReviewController; 
+use App\Http\Controllers\Admin\SiteInfoController; 
 
 
 /*
@@ -118,3 +119,6 @@ Route::get('/message/delete/{id}',[ContactController::class, 'DeleteMessage'])->
 
 /// Product Review Route 
 Route::get('/all/review',[ReviewController::class, 'GetAllReview'])->name('all.review');
+
+/// Site Info Route 
+Route::get('/getsite/info',[SiteInfoController::class, 'GetSiteInfo'])->name('getsite.info');
