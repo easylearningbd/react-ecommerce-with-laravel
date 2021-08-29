@@ -137,5 +137,9 @@ Route::get('/complete',[ProductCartController::class, 'CompleteOrder'])->name('c
 
 Route::get('/details/{id}',[ProductCartController::class, 'OrderDetails'])->name('order.details');
 
+Route::get('/status/processing/{id}',[ProductCartController::class, 'PendingToProcessing'])->name('pending.processing');
+
+Route::get('/status/complete/{id}',[ProductCartController::class, 'ProcessingToComplete'])->name('processing.complete');
+
  
 });

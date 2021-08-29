@@ -95,10 +95,10 @@
 <br>
 
 	@if($order->order_status == 'Pending')
-	<a href="" class="btn btn-block btn-success"> Processing Order</a>
+	<a href="{{ route('pending.processing',$order->id) }}" class="btn btn-block btn-success"> Processing Order</a>
 
 	@elseif($order->order_status == 'Processing')
-    <a href="" class="btn btn-block btn-success"> Complete Order</a>
+    <a href="{{ route('processing.complete',$order->id) }}" class="btn btn-block btn-success"> Complete Order</a>
  	@endif
 
 </ul>
