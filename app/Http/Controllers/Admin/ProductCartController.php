@@ -175,6 +175,22 @@ class ProductCartController extends Controller
     } // End Method 
 
 
+        public function ProcessingOrder(){
+
+        $orders = CartOrder::where('order_status','Processing')->orderBy('id','DESC')->get();
+        return view('backend.orders.processing_orders',compact('orders'));
+
+    } // End Method 
+
+
+        public function CompleteOrder(){
+
+        $orders = CartOrder::where('order_status','Complete')->orderBy('id','DESC')->get();
+        return view('backend.orders.complete_orders',compact('orders'));
+
+    } // End Method 
+
+
 
 
 

@@ -134,9 +134,9 @@
 					<ul>
 						<li> <a href="{{ route('pending.order') }}"><i class="bx bx-right-arrow-alt"></i>Pending Order </a>
 						</li>
-						<li> <a href="form-input-group.html"><i class="bx bx-right-arrow-alt"></i>Processing Order</a>
+						<li> <a href="{{ route('processing.order') }}"><i class="bx bx-right-arrow-alt"></i>Processing Order</a>
 						</li>
-						<li> <a href="form-layouts.html"><i class="bx bx-right-arrow-alt"></i>Complete Order</a>
+						<li> <a href="{{ route('complete.order') }}"><i class="bx bx-right-arrow-alt"></i>Complete Order</a>
 						</li>
 					 
 						 
