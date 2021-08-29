@@ -37,10 +37,10 @@
 
 
 
-<form method="post" action="{{ route('change.password.update') }}" > 
+<form method="post" action="{{ route('update.siteinfo') }}" > 
 	 @csrf
 
-
+	 <input type="hidden" name="id" value="{{ $siteinfo->id }}">
 	 
 
 				<div class="card">
